@@ -357,8 +357,8 @@
                 ctx.fillStyle = '#000';
                 ctx.font = 'bold 60px "Cinzel"';
                 ctx.textAlign = 'center';
-                ctx.fillText("Merry", 256, 160);
-                ctx.fillText("Christmas", 256, 240);
+                ctx.fillText("Merry Christmas", 256, 160);
+                ctx.fillText("My Friend", 256, 240);
                 const tex = new THREE.CanvasTexture(canvas);
                 tex.colorSpace = THREE.SRGBColorSpace;
                 return tex;
@@ -433,7 +433,6 @@
                 });
                 this.dustSystem = new THREE.Points(dustGeo, dustMat);
                 this.scene.add(this.dustSystem);
-                
             }
 
             addPhotoToScene(texture) {
