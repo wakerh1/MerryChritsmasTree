@@ -433,33 +433,7 @@
                 });
                 this.dustSystem = new THREE.Points(dustGeo, dustMat);
                 this.scene.add(this.dustSystem);
-                // --- 新增：加载自定义默认照片逻辑 ---
-                const myPhotos = [
-                    'photo1.png', 
-                    'photo2.jpg', 
-                    'photo3.jpg'
-                    // 在这里添加更多文件名
-                ];
-
-                const texLoader = new THREE.TextureLoader();
                 
-                myPhotos.forEach(filename => {
-                    // 使用相对路径 './' 加载同级目录文件
-                    texLoader.load(
-                        './' + filename, 
-                        (texture) => {
-                            texture.colorSpace = THREE.SRGBColorSpace; // 保持色彩一致
-                            // 复用现有的添加逻辑，自动生成金框和粒子对象
-                            this.addPhotoToScene(texture);
-                        },
-                        undefined, // onProgress
-                        (err) => {
-                            console.warn(`无法加载图片: ${filename}。请检查文件名或路径。`, err);
-                        }
-                    );
-                });
-                // ---------------------------------------
-            } // end of initContent
             }
 
             addPhotoToScene(texture) {
